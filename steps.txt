@@ -1,0 +1,44 @@
+create environment
+pip -m venv <name>
+
+print installed libraries for add to requirements
+pip freeze
+
+create django project
+django-admin.exe startproject <app> .
+
+start project
+py manage.py runserver <0.0.0.0.8000> <- (optional)
+
+create django application
+py manage.py startapp app_name
+ - add your app to INSTALLED_APPS in settings.py
+
+URLS
+Add urls.py in each application for map the urls
+Add in <project_name>/urls -> path('',include('application.urls'))
+
+Views
+Create your Function or class views and add the route
+
+Create superuser for enter to admin section
+python manage.py createsuperuser
+
+DOCKERIZATION
+if you have running your service in docker
+ - docker-compose exec <name> <command>
+
+MIGRATIONS - py manage.py <command>
+migrate -> applies migrations to the database
+    - This command runs all unapplied migrations, ensuring your database schema is up to date.
+makemigrations -> creates new migration files based on the changes you’ve made to your models
+    - After modifying your models, use this command to generate migration files that will later be applied with migrate
+sqlmigrate -> for seeing what SQL will be executed when running a migration
+    - py manage.py sqlmigrate <db> <migration name>
+showmigrations -> displays a list of all migrations for the project and shows which ones have been applied or are pending.
+
+VIEWS
+ - functions or classes that receive web requests and return web responses
+ - responsible for processing requests, interacting with models, and rendering the appropriate response
+CBV (class-based views) ->
+FBV (function-base views ->
