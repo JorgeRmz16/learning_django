@@ -24,6 +24,16 @@ Create your Function or class views and add the route
 Create superuser for enter to admin section
 python manage.py createsuperuser
 
+Create  Custom User Model
+ - Create model
+    - python manage.py startapp users
+ - Add the new  model to settings.py
+    - AUTH_USER_MODEL = 'users.User'
+ - Customize UserCreationForm and UserChangeForm in file form.py in users module
+ - Add admin.py to the project
+ - Create super user - python manage.py createsuperuser
+
+
 DOCKERIZATION
 if you have running your service in docker
  - docker-compose exec <name> <command>
@@ -42,3 +52,5 @@ VIEWS
  - responsible for processing requests, interacting with models, and rendering the appropriate response
 CBV (class-based views) ->
 FBV (function-base views ->
+
+VOLUMES
